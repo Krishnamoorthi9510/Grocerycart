@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+                                <!-- Favicon
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="./images/android-chrome-192x192.png"> -->
+                                <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+                                <!-- Font Awsome  ICON-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <!-- Bootstrap --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+                                <!-- Css -->
+        <link rel="stylesheet" href="css/style.css">
+                                <!--Script -->
+        <script src="js/script.js"></script>
+        <script src="js/tempdb.js"></script>
+        <script>
+            
+           function continueOrder(){
+                alert(`Product Ordered and Order details send your registered Mobile Number and E-Mail`)
+           }
+            
+            function loadCartProduct(){
+                let cartIds=JSON.parse(sessionStorage.getItem("CART_ID")) || [];
+                let cartProducts=""
+                for(index=0; index<cartIds.length; index++){
+                    let cartId=cartIds[index].prodId
+                    
+
+                    let product=products.find(Prod =>Prod.prodId==cartId)
+                    if(cartId){
+                       
+                        cartProducts +='<div class="cart_prod">'+
+                                    '<div class="row product_detail">'+
+                                        '<div class="col image_sec">'+
+                                            '<div class="col-sm-3 prod_img">'+
+                                                '<img src="'+product.url+'" alt="Pista">'+
+                                            '</div>'+
+                                        '</div>'+
+                                        '<div class="col description_sec">'+
+                                                '<p>'+product.category+'</p>'+
+                                                '<h5>'+product.title+'</h5>'+
+                                                '<p>₹ '+product.price+'</p>'+
+                                                '<p> '+product.desc+' || product.quantity</p>'+
+                                                '<p>product Description </p>'+
+                                                '<p>All issue easy returns allowed</p>'+
+                                            '<div class="button-action">'+
+                                                '<button> ADD</button>'+
+                                                '<button type="submit" onclick="removeProduct('+product.prodId+')">X REMOVE</button>'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<br>';
+                                document.getElementById("section_cart").innerHTML = cartProducts;
+                    }
+                }
+            }  
+            
+            function removeProduct(prodId) {
+                // Retrieve cart items from storage
+                var cartItems = JSON.parse(sessionStorage.getItem("CART_ID")) || [];
+                    console.log(cartItems);
+                // Filter out the product to be removed
+                var updatedCartItems = cartItems.filter(function(item) {
+                    console.log(item.prodId);
+                    console.log(prodId);
+                    return item.prodId !== prodId;
+                
+                });
+
+                // Update the cart items in storage
+                sessionStorage.setItem("CART_ID", JSON.stringify(updatedCartItems));
+                loadCartProduct()
+            }
+
+            function validateCart(){
+                let cartItems=JSON.parse(sessionStorage.getItem("CART_ID")) ||[];
+                if(cartItems.length <= 0){
+                    alert(`Cart Is Empty
+Add Products from Product Page`)
+                            window.location.href="./product.html"
+                }
+                loadCartProduct()
+            }
+
+
+
+            function totalAmount() {
+                let cartItems = JSON.parse(sessionStorage.getItem("CART_ID"));
+                console.log(cartItems);
+
+                if (cartItems !== null && cartItems.length > 0) {
+                    var tot_amnt = 0;
+                    var discount = 0;
+
+                    for (var i = 0; i < cartItems.length; i++) {
+                        console.log(cartItems[i]);
+                        
+                        var product = products.find(Prod => Prod.prodId == cartItems[i]);
+                        
+                        if (product) {
+                        tot_amnt += product.mrp;
+                        discount += product.price;
+                        }
+                    }
+    
+                    var tot_discount = ((tot_amnt - discount) / 10);
+                    var net_amnt=(tot_amnt-tot_discount)
+                    console.log("Net Amount: "+ net_amnt);
+                    console.log("Total Amount:", tot_amnt);
+                    console.log("Discount:", discount);
+                    console.log("Total Discount:", tot_discount);
+                } else {
+                    console.log("Cart is empty");
+                }
+
+
+                document.getElementById("price_sec").innerHTML='<div>'+
+                                    '<h4>Price  Details</h4>'+
+                                    '<div class="row">'+
+                                        '<div class="col">'+
+                                            '<p>Total Product Price</p>'+
+                                        '</div>'+
+                                        '<div class="col">'+
+                                            '<p>+ 550</p>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="row">'+
+                                        '<div class="col">'+
+                                            '<p>Total Discounts</p>'+
+                                        '</div>'+
+                                        '<div class="col">'+
+                                            '<p>- ₹50</p>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="row tot_order">'+
+                                        '<div class="col">'+
+                                            '<p><b>Order Total</b></p>'+
+                                        '</div>'+
+                                        '<div class="col">'+
+                                            '<p><b>₹500</b></p>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="discount ds-flx">'+
+                                        '<img src="./images/discount.png" alt="">'+
+                                        '<p><b> Yay! Your total discount is ₹50</b></p>'+
+                                    '</div>'+
+                                    '<div class="btn_info">'+
+                                        '<p>Clicking on ‘Continue’ will not deduct any money</p>'+
+                                    '</div>'+
+                                    '<div class="continue_btn">'+
+                                        '<button type="submit" onclick="continueOrder()">Continue</button>'+
+                                    '</div>'+
+                                '</div>';
+
+            }
+
+
+
+
+           
+
+
+        </script>
+</head>
+<body onload="checkSession(),loadCartProduct(),validateCart(),totalAmount()">
+    <style>
+        .ds-flx{display: flex;}
+        .process-level{justify-content: center;border-bottom: 1px solid#ddd;margin-top: 20px;}
+        .process-level li{list-style: none;position: relative;border: 1px solid #5585f8;border-radius: 50%;margin: 0 75px;width: 25px;height: 25px;text-align: center;}
+        .process-level .alt-name{text-align: center;}    
+        .process-level .summary::after{background-color:transparent;background: none;}       
+        .process-level li::after{position: absolute;content: "";width: 152px; height: 1px; background-color:#5585f8;top: 11px;left: 23px;}
+        /* Future Editable code for Java script */
+        /* .process-level li{background-color: #0f0;}
+        .process-level li::after{background-color: #0f0;height: 2px; text-shadow:#000 4px 4px 4px;} */
+        
+        .cart_prod{border: 1px solid;margin: 1px 100px;border-radius: 3px; border-bottom: 2px solid;}
+        .cart_sec{margin-top: 30px;}
+        .cart_prod img{width: 250%;object-fit: contain;}
+        .cart_prod .prod_img{margin: auto;}
+        .cart_prod .desc .edit{text-align: end;}
+        .cart_prod p{margin: 0;}
+        .cart_prod .product_detail{width: 100%;}
+        .cart_prod .image_sec{width: 30%;}
+        .cart_prod .description_sec{width: 40%;padding-left: 40px;}
+        .cart_prod button{border:0;background-color: #fff;padding-right:25px;padding-top: 10px;}
+        .cart_prod button:hover{color: #ffb12b;}
+        .tot_order{border-top: 1px dotted;}
+        .discount{background-color: rgb(211, 244, 234);padding: 10px;border-radius: 5px;}
+        .discount img{width: 6%; object-fit: contain;margin-right: 5px;}
+        .discount p{margin: 0; color:  rgb(3, 141, 99);;}
+        .continue_btn button{width: 100%;padding: 5px;border-radius: 3px;font-size: 20px;color: #fff;background-color: #ffb12b;border: 0;}
+        
+        .btn_info{background-color: rgb(248, 248, 255);margin: 10px 0 ; padding: 10px 0 ;}
+        .btn_info p{font-size:14px; margin: 0;}
+        .price_sec{border-left: 1px solid; padding-left: 14px;}
+    </style>
+    <section >
+        <div class="navigation">
+            <div class="nav-top">
+                <div class="row">
+                    <div class="col top-sec1">
+                        <a href="#"> <img src="./images/logo.webp"></a>
+                    </div>
+                    <div class="col top-sec2">
+                        <div class="search">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col top-sec3">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link " aria-current="page" href="./account.html"><i class="fa fa-user" aria-hidden="true" title="USER ACCOUNT"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-heart" aria-hidden="true" title="WISH LIST"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./cart.html"><i class="fa fa-cart-plus" aria-hidden="true" title="CART"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-truck" aria-hidden="true" title="TRACK ORDER"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" ><i onclick="removeUser()" class="fa fa-sign-out" aria-hidden="true" title="LOG OUT"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="nav-bot">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Grocerycart</a> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="./index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./product.html">PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./blog.html">BLOG</a>
+                                </li>
+                                
+                                <!-- Future Update -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    OFFERS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Track Order</a></li>
+                                    <li><a class="dropdown-item" href="#">Upcomming Product</a></li>
+                                    <li><a class="dropdown-item" href="#">Offers</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="cart-sec container">
+            <div class="process-level ds-flx">
+                <ul class="ds-flx">
+                    <div class="li-cart alt-name">
+                        <li>1</li><span>Cart</span>
+                    </div>
+                    <div class="li-address alt-name">
+                        <li>2</li><span>Address</span>
+                    </div>
+                    <div class="li-payment alt-name">
+                        <li>3</li><span>Payment</span>
+                    </div>
+                    <div class="li-summary alt-name">
+                        <li class="summary">4</li><span>Summary</span>
+                    </div>
+                    
+                </ul>
+            </div>
+            <div >
+                <div id="cart_section" class="cart_sec">
+                    <div class="row">
+                        <div class="col-8">
+                            <div id="section_cart">
+                                <!-- <div class="cart_prod">
+                                    <div class="row product_detail">
+                                        <div class="col image_sec">
+                                            <div class="col-sm-3 prod_img">
+                                                <img src="./images/dryfruits-pista.webp" alt="Pista">
+                                            </div>
+                                        </div>
+                                        <div class="col description_sec">
+                                                <h5>Title</h5>
+                                                <p>₹ 260</p>
+                                                <p>Product Grade|product.quantity</p>
+                                                <p>product Description </p>
+                                                <p>All issue easy returns allowed</p>
+                                            <div class="button-action">
+                                                <button> ADD</button>
+                                                <button type="submit">X REMOVE</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-3 price_sec">
+                            <div id="price_sec">
+                                <!-- <div>
+                                    <h4>Price  Details</h4>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>Total Product Price</p>
+                                        </div>
+                                        <div class="col">
+                                            <p>+ ₹451</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>Total Discounts</p>
+                                        </div>
+                                        <div class="col">
+                                            <p>- ₹19</p>
+                                        </div>
+                                    </div>
+                                    <div class="row tot_order">
+                                        <div class="col">
+                                            <p><b>Order Total</b></p>
+                                        </div>
+                                        <div class="col">
+                                            <p><b>₹432</b></p>
+                                        </div>
+                                    </div>
+                                    <div class="discount ds-flx">
+                                        <img src="./images/discount.png" alt="">
+                                        <p><b> Yay! Your total discount is ₹19</b></p>
+                                    </div>
+                                    <div class="btn_info">
+                                        <p>Clicking on ‘Continue’ will not deduct any money</p>
+                                    </div>
+                                    <div class="continue_btn">
+                                        <button type="submit">Continue</button>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

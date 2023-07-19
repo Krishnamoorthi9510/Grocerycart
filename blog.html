@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+                                <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="./images/android-chrome-192x192.png">
+                                <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+                                <!-- Font Awsome  ICON-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <!-- Bootstrap --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+                                <!-- Css -->
+        <link rel="stylesheet" href="css/style.css">
+                                <!--Script -->
+        <script src="js/script.js"></script>
+    </head>
+    <body onload="checkSession()">
+                        <!-- Top Navigation -->
+        <!-- Navigation Section -->
+        <div class="navigation">
+            <div class="nav-top">
+                <div class="row">
+                    <div class="col top-sec1">
+                        <a href="#"> <img src="./images/logo.webp"></a>
+                    </div>
+                    <div class="col top-sec2">
+                        <div class="search">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col top-sec3">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link " aria-current="page" href="./account.html"><i class="fa fa-user" aria-hidden="true" title="USER ACCOUNT"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-heart" aria-hidden="true" title="WISH LIST"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./cart.html"><i class="fa fa-cart-plus" aria-hidden="true" title="CART"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-truck" aria-hidden="true" title="TRACK ORDER"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" ><i onclick="removeUser()" class="fa fa-sign-out" aria-hidden="true" title="LOG OUT"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="nav-bot">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Grocerycart</a> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="./index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./product.html">PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./blog.html">BLOG</a>
+                                </li>
+                                <!-- Future Update -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    OFFERS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Track Order</a></li>
+                                    <li><a class="dropdown-item" href="#">Upcomming Product</a></li>
+                                    <li><a class="dropdown-item" href="#">Offers</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+                             <!-- Blog Section -->
+        <div class="container">
+            <div class="blog">
+                <div class="spice-img">
+                    <img src="./images/blog_img_spice_1.webp" alt="Spice_1" />
+                </div>
+                <div class="content">
+                    <div class="sml-sec">
+                        <h5>MAY 29,2023</h5>
+                    </div>
+                    <div class="sml-sec">
+                        <h4>Most Popular Spices by Cuisine</h4>
+                    </div>
+                    <div class="sml-sec">
+                        <ul class="li-outer">
+                            <li class="list">Posted By:Krishna</li>
+                            <li class="list list-2"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</li>
+                        </ul>
+                    </div>
+                    <div class="post">
+                        <p>"With the explosion of cooking shows on TV and more information on recipes from far away places available on the internet Americans are more willing to experiment in the kitchen than ever before. 
+                            Now while other cultures around the world have grown up cooking with a pinch of this spice or a dash of that spice many Americans still seem a bit hesitate to cook in this manner.
+                            After talking to customers for years we decided to come up with this handy guide to help inspire cooks to experiment more in the kitchen in trying out amazing recipes from different parts of the world.
+                             Here you'll find seasoning blends by region that take the guess work out of the meal prep process or if you have a bit more confidence in your cooking abilities and like to dabble we also list the most common spices used by each type of cuisine. 
+                             If you're looking for recipe ideas we also list those by cuisine type.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="spice-img">
+                    <img src="./images/blog_img_spice_2.webp" alt="Spice_1" />
+                </div>
+                <div class="content">
+                    <div class="sml-sec">
+                        <h5>APRIL 25,2023</h5>
+                    </div>
+                    <div class="sml-sec">
+                        <h4>Types of Cardamom and best Falvors</h4>
+                    </div>
+                    <div class="sml-sec">
+                        <ul class="li-outer">
+                            <li class="list">Posted By:Krishna</li>
+                            <li class="list list-2"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</li>
+                        </ul>
+                    </div>
+                    <div class="post">
+                        <p>"I love the smell of freshly ground cardamom (which is a good thing because I can't really get away from it).
+                            Here at Spices Inc we're always grinding and blending spices on a daily basis, and cardamom is no different.
+                            Cardamom is a basic ingredient that is included in many different recipes and seasonings, and also plays an intricate role in their flavor profiles. 
+                            It is also generally considered to be the third most expensive spice in the world, after saffron and vanilla.
+                            The fourth stage is when you begin to roast spices to release the volatile oils. Once you've started down this path you leave mere kitchen mortals in your aromatic dust.
+                            I'll talk more about this stage in another post.For stages three and four you are going to need to grind your own spices. Here the choices are many and will depend on 
+                            your own unique style, the amount of time you have and how much needs to be ground.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="spice-img">
+                    <img src="./images/blog_img_spice_3.webp" alt="Spice_1" />
+                </div>
+                <div class="content">
+                    <div class="sml-sec">
+                        <h5>MARCH 28,2023</h5>
+                    </div>
+                    <div class="sml-sec">
+                        <h4>Spice Cabinet 101: Cardamom</h4>
+                    </div>
+                    <div class="sml-sec">
+                        <ul class="li-outer">
+                            <li class="list">Posted By:Krishna</li>
+                            <li class="list list-2"><i class="fa fa-comments" aria-hidden="true"></i> 3 Comments</li>
+                        </ul>
+                    </div>
+                    <div class="post">
+                        <p>Many people have heard of green cardamom, but not as many know about its long lost cousin – black cardamom.
+                             Although they are both in the cardamom family, black cardamom is unique in looks, aroma and taste.
+                              Black cardamom is dried over an open fire which provides it a smoky flavor and aroma. 
+                              When used whole in dishes, black cardamom seeds provide a mysterious, almost bacony flavor.
+                               Black cardamom is popular in Indian dishes and is more of a warm spice, while green cardamom is a cool spice. 
+                               This makes black cardamom preferred in exotic spice blends such as Garam Masala and Tandoori Spice. 
+                                The third stage is when you've gained the knowledge of how spectacular spices are when they are ground fresh just before they
+                                 are added to the recipe or dish. This is the "aha" moment; once you get here you never want to go back.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="spice-img">
+                    <img src="./images/blog_img_spice_4.webp" alt="Spice_1" />
+                </div>
+                <div class="content">
+                    <div class="sml-sec">
+                        <h5>MARCH 4,2023</h5>
+                    </div>
+                    <div class="sml-sec">
+                        <h4>Worldest Best Quality of Cinnamon</h4>
+                    </div>
+                    <div class="sml-sec">
+                        <ul class="li-outer">
+                            <li class="list">Posted By:Krishna</li>
+                            <li class="list list-2"><i class="fa fa-comments" aria-hidden="true"></i> 4 Comments</li>
+                        </ul>
+                    </div>
+                    <div class="post">
+                        <p>Warm, comforting, and welcoming, the woodsy, spicy scent of cinnamon practically defines the idea of baked goods. 
+                            With virtually no tart notes and an inherent depth, cinnamon is often perceived as sweet, and lends itself naturally 
+                            to sugary applications—who doesn’t love cinnamon sugar on toast in the morning? However, cinnamon can also be used in 
+                            savory dishes, mellowing out gamy flavors in stews or roasts, or brightening up a heavy dish with its lilting aroma.
+                             According to Lior Lev Sercarz, New York-based spice guru and author of the book Spice Companion, cinnamon “…brings 
+                             sweetness to savory foods and a savory element to desserts. Because of its clove-like scent and warm flavor, it can 
+                             trick our brains into thinking that dishes made with cinnamon have sugar even if there is none.”
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="spice-img">
+                    <img src="./images/blog_img_spice_5.webp" alt="Spice_1" />
+                </div>
+                <div class="content">
+                    <div class="sml-sec">
+                        <h5>FEB 22,2023</h5>
+                    </div>
+                    <div class="sml-sec">
+                        <h4>The Four Stages of Spice Use</h4>
+                    </div>
+                    <div class="sml-sec">
+                        <ul class="li-outer">
+                            <li class="list">Posted By:Krishna</li>
+                            <li class="list list-2"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</li>
+                        </ul>
+                    </div>
+                    <div class="post">
+                        <p>When budding foodies begin spice shopping for themselves, they can be somewhat 
+                            intimidated with spices and go with spice blends. Blends are less risky and a new cook can
+                            get the best and most consistent flavor profiles using this method. The more experienced 
+                            cook learns how food relates and they can read a dish, which allows them to cook with pinches 
+                            and dashes--a pinch of this, a dash of that.The second stage is when you decide to start making 
+                            your own seasoning blends or adding a little of this to go with just a bit of that. For this stage you 
+                            tend to go for spices that are already ground.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog">
+                <div class="spice-img">
+                    <img src="./images/blog_img_spice_6.webp" alt="Spice_1" />
+                </div>
+                <div class="content">
+                    <div class="sml-sec">
+                        <h5>JAN 2,2023</h5>
+                    </div>
+                    <div class="sml-sec">
+                        <h4>Are Spices Gluten Free?</h4>
+                    </div>
+                    <div class="sml-sec">
+                        <ul class="li-outer">
+                            <li class="list">Posted By:Krishna</li>
+                            <li class="list list-2"><i class="fa fa-comments" aria-hidden="true"></i> 3 Comments</li>
+                        </ul>
+                    </div>
+                    <div class="post">
+                        <p>Glutens are proteins found in wheat, barley, malts, rye, and triticale. 
+                            Glutens are also commonly found in food additives such as flavorings, stabilizers, and thickening agents.  
+                            Foods that are processed with or through the same machines that process wheat, may contain various amounts of wheat due
+                             to cross-contamination. In the United States, the Food and Drug Administration classifies gluten as "generally 
+                             recognized as safe" or GRAS, so gluten may not even be listed on product ingredients. The FDA classifies foods that contain 
+                             less than or equal to 20 ppm (parts per million) to be gluten-free and at this time there is no law or regulation that defines the rules for labeling foods as 'gluten-free'.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <div class="footertop">
+            <div class="categories">
+                <h5>CATEGORIES</h5>
+                <ul>
+                    <li><a href="./product.html">Dry Fruits</a></li>
+                    <li><a href="./product.html">Spices</a></li>
+                    <li><a href="./product.html">Grocery</a></li>
+                
+                </ul>
+            </div>
+            <div class="myaccount">
+                <h5>MY ACCOUNT</h5>
+                <ul>
+                    <li><a href="./account.html">Profile</a></li>
+                    <li><a href="./wishlist.html">Wish list</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./trackorder.html">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="aboutus">
+                <h5>ABOUT US</h5>
+                <ul>
+                    <li><a href="#">Quality</a></li>
+                    <li><a href="#">Courier Partner</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="logo_sec"> 
+                <a href="./index.html"><img src="./images/logo.webp" alt=""></a>
+                <div class="followus-sec">
+                    <div class="tit">
+                        <h6>Follow Us</h6>
+                    </div>
+                    <div class="followus-icon">
+                        <a href="#" id="google-icon" alt="Google" title="Google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        <a href="#" id="fb-icon" alt="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" id="insta-icon" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" id="twitter-icon" alt="Twitter" title="Twitter" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" id="youtube-icon" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright © 2023 Grocery Cart Private Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>

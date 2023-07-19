@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grocerycart</title>
+                                <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="./images/android-chrome-192x192.png">
+                                <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+                                <!-- Font Awsome  ICON-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <!-- Bootstrap --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+                                <!-- Css -->
+        <link rel="stylesheet" href="css/style.css">
+                                <!--Script -->
+        <script src="js/script.js"></script>
+        <script src="js/tempdb.js"></script>
+        <script>
+           /*===============================================*/
+            // Product Page 
+            function addtoCart(prodId) {
+                var productId = {
+                    "prodId": prodId
+                };
+
+                // Retrieve existing array from local storage
+                var cart = JSON.parse(sessionStorage.getItem("CART_ID")) || [];
+
+                // Add the new product ID to the array
+                cart.push(productId);
+
+                // Store the updated array back into local storage
+                sessionStorage.setItem("CART_ID", JSON.stringify(cart));
+
+                alert('Product Added Successfully');
+                }
+
+
+            function loadProducts(){
+                let prod=""
+                for(let product of products){
+                    
+                    prod += '<div onclick="prodDescription(' + product.prodId + ')" class="card" style="width: 18rem;">'+
+                                            '<img src="'+product.url+'" class="card-img-top" alt="'+product.title+'">'+
+                                            '<div class="card-body">'+
+                                                '<h5 class="card-title">'+product.category+' || '+product.title+'</h5>'+
+                                                '<p class="card-text">'+product.desc+' || Rs.'+product.price+'/Kg </p>'+
+                                            // '<button class="btn btn-secondary">View</button> '+
+                                                '<div class=button-group>'+
+                                                    '<button class="btn btn-secondary" type="button" onclick="addtoCart(' + product.prodId + ')" ><i class="fa fa-cart-plus" aria-hidden="true"></i></button> '+ 
+                                                    '<button class="btn btn-secondary" type="button" ><i class="fa fa-heart" aria-hidden="true"></i></button> '+
+                                                '</div>'+
+                                            '</div>'+
+                                '</div>';
+                }
+                document.getElementById("listProduct").innerHTML=prod;
+            }
+
+            function prodDescription(prodId){
+                sessionStorage.setItem("PRODID", prodId); 
+                window.location.href="./description.html";
+            }
+        </script>
+        
+    </head>
+    <body onload="checkSession(),loadProducts()">
+        <!-- Home Page Default Navigation -->
+        <!-- Navigation Section -->
+        <div class="navigation">
+            <div class="nav-top">
+                <div class="row">
+                    <div class="col top-sec1">
+                        <a href="#"> <img src="./images/logo.webp"></a>
+                    </div>
+                    <div class="col top-sec2">
+                        <div class="search">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col top-sec3">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link " aria-current="page" href="./account.html"><i class="fa fa-user" aria-hidden="true" title="USER ACCOUNT"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-heart" aria-hidden="true" title="WISH LIST"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./cart.html"><i class="fa fa-cart-plus" aria-hidden="true" title="CART"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-truck" aria-hidden="true" title="TRACK ORDER"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" ><i onclick="removeUser()" class="fa fa-sign-out" aria-hidden="true" title="LOG OUT"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="nav-bot">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Grocerycart</a> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="./index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./product.html">PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./blog.html">BLOG</a>
+                                </li>
+                                <!-- Future Update -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    OFFERS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Track Order</a></li>
+                                    <li><a class="dropdown-item" href="#">Upcomming Product</a></li>
+                                    <li><a class="dropdown-item" href="#">Offers</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+                        <!-- Home Page Default Navigation End -->
+
+               <!-- Product Disply Section Start -->
+        <section class="container prod-sec">
+            <div>
+                <div class="prod_list">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="filter-block">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="filer-category">
+                                            <label>categories</label>
+                                            <div class="cate-lable">
+                                                <form action="#" method="get">
+                                                    <input type="checkbox" name="category" value="category"> Spice</input><br>
+                                                    <input type="checkbox" name="category" value="category"> Dry Fruit</input><br>
+                                                    <input type="checkbox" name="category" value="category"> Grocery</input>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="filer-Price">
+                                        <label>Price</label>
+                                        <div class="price-lable">
+                                            <form action="#" method="get">
+                                                    <input type="checkbox"  name="price" value="price"> 0 - 250</input><br>
+                                                    <input type="checkbox"  name="price" value="price"> 250 - 500</input><br>
+                                                    <input type="checkbox"  name="price" value="price"> 500 - 750</input><br>
+                                                    <input type="checkbox"  name="price" value="price"> 750 - 1000</input><br>
+                                                    <input type="checkbox"  name="price" value="price"> 1000 & Above</input>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="filer-Weight">
+                                        <label>Weight</label>
+                                        <div class="weight-lable">
+                                            <form action="#" method="get">
+                                                    <input type="checkbox"  name="weight" value="weight"> 100g - 250g</input><br>
+                                                    <input type="checkbox"  name="weight" value="weight"> 250g - 500g</input><br>
+                                                    <input type="checkbox"  name="weight" value="weight"> 500g - 1Kg</input><br>
+                                                    <input type="checkbox"  name="weight" value="weight"> 1Kg & Above</input>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="filer-productname">
+                                        <label>Product Name</label>
+                                        <div class="productname-lable">
+                                            <form action="#" method="get">
+                                                    <input type="radio"  name="productname" value="productname"> A - Z </input><br>
+                                                    <input type="radio"  name="productname" value="productname"> Z - A </input>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="pro-display">
+                                  
+                                <div class="row">
+                                    <div  id="listProduct" class="col">
+
+                                    </div>
+                                </div>
+                
+                                <!-- <div class="row">
+                                    <div  id="listProduct" class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/dryfruits-almonds.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <button class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></button>
+                                            <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                                    <div class="offcanvas-header">
+                                                        <h5 id="offcanvasRightLabel">Grocerycart</h5>
+                                                        <div class="cart_design">
+                                                            
+                                                            <div class="inner_cart">
+                                                                <div class="product">
+                                                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                                                    <input type="text" name="" id="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="offcanvas-body">
+                                                   
+                                                        <button>Place Order</button>
+                                                    </div>
+                                                    </div> 
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/dryfruits-grapes.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/dryfruits-pista.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/dryfruits-pigs.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/dryfruits-walnuts.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/dryfruits-grapes.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-clove.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-cardamom.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-cinnamon.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-saffron.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-coriander.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-fenugreek seed.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-dried rosemary.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-black sesame.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="./images/spice-star anise.webp" class="card-img-top" alt="Almonds">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Dry Fruits || Almonds</h5>
+                                            <p class="card-text">Grade-"A" Almonds||Rs.500/Kg </p>
+                                            <a href="#" class="btn btn-secondary"><select><option>250g</option><option>500g</option><option>1Kg</option></select></a>
+                                            <a href="#" class="btn btn-secondary"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <div class="footertop">
+            <div class="categories">
+                <h5>CATEGORIES</h5>
+                <ul>
+                    <li><a href="./product.html">Dry Fruits</a></li>
+                    <li><a href="./product.html">Spices</a></li>
+                    <li><a href="./product.html">Grocery</a></li>
+                
+                </ul>
+            </div>
+            <div class="myaccount">
+                <h5>MY ACCOUNT</h5>
+                <ul>
+                    <li><a href="./account.html">Profile</a></li>
+                    <li><a href="./wishlist.html">Wish list</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./trackorder.html">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="aboutus">
+                <h5>ABOUT US</h5>
+                <ul>
+                    <li><a href="#">Quality</a></li>
+                    <li><a href="#">Courier Partner</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="logo_sec"> 
+                <a href="./index.html"><img src="./images/logo.webp" alt=""></a>
+                <div class="followus-sec">
+                    <div class="tit">
+                        <h6>Follow Us</h6>
+                    </div>
+                    <div class="followus-icon">
+                        <a href="#" id="google-icon" alt="Google" title="Google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        <a href="#" id="fb-icon" alt="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" id="insta-icon" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" id="twitter-icon" alt="Twitter" title="Twitter" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" id="youtube-icon" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright © 2023 Grocery Cart Private Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>

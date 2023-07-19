@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grocerycart</title>
+                                <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="./images/android-chrome-192x192.png">
+                                <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+                                <!-- Font Awsome  ICON-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <!-- Bootstrap --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+                                <!-- Css -->
+        <link rel="stylesheet" href="css/style.css">
+                                <!--Script -->
+        <script src="js/script.js"></script>
+        <script src="js/tempdb.js"></script>
+    </head>
+    <body>
+        <!-- Navigation Section -->
+        <div class="navigation">
+            <div class="nav-top">
+                <div class="row">
+                    <div class="col top-sec1">
+                        <a href="#"> <img src="./images/logo.webp"></a>
+                    </div>
+                    <div class="col top-sec2">
+                        <div class="search">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col top-sec3">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link " aria-current="page" href="./account.html"><i class="fa fa-user" aria-hidden="true" title="USER ACCOUNT"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-heart" aria-hidden="true" title="WISH LIST"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./cart.html"><i class="fa fa-cart-plus" aria-hidden="true" title="CART"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-truck" aria-hidden="true" title="TRACK ORDER"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" ><i onclick="removeUser()" class="fa fa-sign-out" aria-hidden="true" title="LOG OUT"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="nav-bot">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Grocerycart</a> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="./index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./product.html">PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./blog.html">BLOG</a>
+                                </li>
+                                
+                                <!-- Future Update -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    OFFERS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Track Order</a></li>
+                                    <li><a class="dropdown-item" href="#">Upcomming Product</a></li>
+                                    <li><a class="dropdown-item" href="#">Offers</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div>
+            <section class="my_account">
+                <div class="container">
+                    <div class="acc_selection">
+                        <div class="user_select reg">
+                            <div class="mb-3">
+                                <div class="open_content">
+                                    <h6>New here?</h6>
+                                    <p>Registration is free and easy!</p>
+                                </div>
+                                <div class="list_feature">
+                                    <ul>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> Faster checkout</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> Save multiple shipping addresses</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> View and track orders and more</li>
+                                    </ul>
+                                </div>
+                                <div class="redirect">
+                                    <a href="./register.html"><button>CREATE AN ACCOUNT</button></a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="user_select login">
+                            
+
+                            <!-- <div class="mb-3">
+                                <label for="formGroupExampleInput" class="form-label">Example label</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+                            </div>
+                              <div class="mb-3">
+                                <label for="formGroupExampleInput2" class="form-label">Another label</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+                              </div> -->
+                              
+                           
+
+                            <div class="open_content">
+                                <h6>Already registered?</h6>
+                            </div>
+                            <div class="form_group">
+                                <div class="form_ip"> 
+                                    <div class="input_sec mb-3">
+                                        <label >Email address</label>
+                                        <div class="ip">
+                                            <input id="email" type="email" />
+                                        </div>
+                                        <div style="color: red;" id="userCheck"></div>
+                                    </div>
+                                    <div class="input_sec mb-3">
+                                        <label >Password</label>
+                                        <div class="ip">
+                                            <input id="pswd" type="password"/>
+                                        </div>
+                                        <div style="color: red;" id="pswdCheck"></div>
+                                    </div>
+                                </div>
+                                <div class="redirect">
+                                    <button type="button" onclick="validateLogin()">SIGN IN</button>
+                                    <a href="./reset_account.html">Forgot your password?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+
+    <script>
+        
+        
+    </script>
+
+
+
+    <footer>
+        <div class="footertop">
+            <div class="categories">
+                <h5>CATEGORIES</h5>
+                <ul>
+                    <li><a href="./product.html">Dry Fruits</a></li>
+                    <li><a href="./product.html">Spices</a></li>
+                    <li><a href="./product.html">Grocery</a></li>
+                
+                </ul>
+            </div>
+            <div class="myaccount">
+                <h5>MY ACCOUNT</h5>
+                <ul>
+                    <li><a href="./account.html">Profile</a></li>
+                    <li><a href="./wishlist.html">Wish list</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./trackorder.html">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="aboutus">
+                <h5>ABOUT US</h5>
+                <ul>
+                    <li><a href="#">Quality</a></li>
+                    <li><a href="#">Courier Partner</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="logo_sec"> 
+                <a href="./index.html"><img src="./images/logo.webp" alt=""></a>
+                <div class="followus-sec">
+                    <div class="tit">
+                        <h6>Follow Us</h6>
+                    </div>
+                    <div class="followus-icon">
+                        <a href="#" id="google-icon" alt="Google" title="Google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        <a href="#" id="fb-icon" alt="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" id="insta-icon" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" id="twitter-icon" alt="Twitter" title="Twitter" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" id="youtube-icon" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright © 2023 Grocery Cart Private Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>

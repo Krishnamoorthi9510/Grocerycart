@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+            <title>Grocerycart</title>
+                                    <!-- Favicon -->
+            <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+            <link rel="manifest" href="./images/android-chrome-192x192.png">
+                                    <!-- Google Fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+                                    <!-- Font Awsome  ICON-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <!-- Bootstrap --> 
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+                                    <!-- Css -->
+            <link rel="stylesheet" href="css/style.css">
+                                    <!--Script -->
+            <script src="js/script.js"></script>
+            <script>
+                function getMessage(){
+                    let name=document.getElementById("name").value
+                    let mail=document.getElementById("mail").value
+                    let msg=document.getElementById("comment").value
+                    if(name !="" && mail !="" && msg !=""){
+                        localStorage.setItem("CUS_DETAILS",JSON.stringify(name,mail,msg))
+                        document.getElementById("getMsg").innerHTML=""
+                        alert(`Thankyou for your valuable Comment`)
+                    }else{
+                        document.getElementById("getMsg").innerHTML="Required all fields  Kindly fill all the input "
+                    }
+                    
+                }
+            </script>
+        </head>
+    <body onload="checkSession()">
+                            <!-- Top Navigation -->
+        <!-- Navigation Section -->
+        <div class="navigation">
+            <div class="nav-top">
+                <div class="row">
+                    <div class="col top-sec1">
+                        <a href="#"> <img src="./images/logo.webp"></a>
+                    </div>
+                    <div class="col top-sec2">
+                        <div class="search">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col top-sec3">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link " aria-current="page" href="./account.html"><i class="fa fa-user" aria-hidden="true" title="USER ACCOUNT"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-heart" aria-hidden="true" title="WISH LIST"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./cart.html"><i class="fa fa-cart-plus" aria-hidden="true" title="CART"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-truck" aria-hidden="true" title="TRACK ORDER"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" ><i onclick="removeUser()" class="fa fa-sign-out" aria-hidden="true" title="LOG OUT"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="nav-bot">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Grocerycart</a> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="./index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./product.html">PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./blog.html">BLOG</a>
+                                </li>
+                                <!-- Future Update -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    OFFERS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Track Order</a></li>
+                                    <li><a class="dropdown-item" href="#">Upcomming Product</a></li>
+                                    <li><a class="dropdown-item" href="#">Offers</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+                        <!-- Top Navigation End -->
+
+
+
+
+        <div class="contact">
+            <div class="banner-section">
+                <div class="banner">
+                    <div class="container">
+                        <div class="bot-sec">
+                            <div class="con-tit">
+                                <h2>Contact Us</h2>
+                            </div>
+                            <div class="contact-icon">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="icon-block">
+                                            <a href="#" ><img src="./images/home-icon.png"></a><br>
+                                            <span>Address</span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-block">
+                                            <a href="#" ><img src="./images/phone-icon.png" ></a><br>
+                                            <span>Phone</span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-block">
+                                            <a href="#" ><img src="./images/clock-icon.png" ></a><br>
+                                            <span>Hours</span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="icon-block">
+                                            <a href="#" ><img src="./images/computer-icon.png" ></a><br>
+                                           <span>E-Mail</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-but">
+                                <a href="./index.html">Explore Grocerycart</a>
+                            </div>
+                        </div>
+                        <div class="top-sec">
+                            <div class="content">
+                                <div class="logo-grocery">
+                                    <img src="./images/logo.webp" alt="Grocerycart" title="Grocerycart">
+                                    <span><i>Skip grocery day with us</i></span>
+                                </div>
+                                <div class="followus-sec">
+                                    <div class="tit">
+                                        <h6>Follow Us</h6>
+                                    </div>
+                                    <div class="followus-icon">
+                                        <a href="#" id="google-icon" alt="Google" title="Google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                                        <a href="#" id="fb-icon" alt="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#" id="insta-icon" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        <a href="#" id="twitter-icon" alt="Twitter" title="Twitter" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#" id="youtube-icon" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="contact-info">
+                                <div class="tit">
+                                    <h3>CONTACTS</h3>
+                                </div>
+                                <div class="small-sec">
+                                    <div class="icon-block">
+                                        <a href="#" ><img src="./images/home-icon.png"> </a>
+                                    </div>
+                                    <div class="content">    
+                                        <h5>Address</h5>
+                                        <p><address>#5,Karapattu Uthangarai Krishnagiri Tamilnadu India Pin-635207</address></p>
+                                    </div>
+                                </div>
+                                <div class="small-sec">
+                                    <div class="icon-block">
+                                        <a href="#" ><img src="./images/phone-icon.png" ></a>
+                                    </div>
+                                    <div class="content">
+                                        <h5>Phone</h5>
+                                        <p><address>+91 9524213166<br>+91 7418155563</address></p>
+                                    </div>
+                                </div>
+                                <div class="small-sec">
+                                    <div class="icon-block">
+                                        <a href="#" ><img src="./images/clock-icon.png" ></a>
+                                    </div>
+                                    <div class="content">
+                                        <h5>Hours</h5>
+                                        <p><address>7 Days a week from 10:00 am to 6:00 pm</address></p>
+                                    </div>
+                                </div>
+                                <div class="small-sec">
+                                    <div class="icon-block">
+                                        <a href="#" ><img src="./images/computer-icon.png" ></a>
+                                    </div>
+                                    <div class="content">
+                                        <h5>E-Mail</h5>
+                                        <p><address>krishnamoorthi9510@gmail.com</address></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="getintouch">
+                                <div class="tit">
+                                    <h3>GET IN TOUCH WITH US</h3>
+                                </div>
+                                <div class="inner-cont">
+                                    <label>Name</label>
+                                    <input type="text" name="name" id="name" placeholder="Name" required><br>
+                                    <label>E-Mail</label><input type="text" name="pswd" id="mail" placeholder="example@gmail.com" required><br>
+                                    <label>Message</label><textarea name="comment" id="comment" aria-colspan="10" aria-rowspan="10" required></textarea><br>
+                                    <button onclick="getMessage()">submit</button>
+                                    <div id="getMsg" style="color:#f00; padding-top: 30px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="direction">
+                                <div class="tit">
+                                    <h3>DIRECTIONS</h3>
+                                </div>
+                                <div class="inner-cont">
+                                    <p><address>#5,Karapattu,<br>Uthangarai,<br>Krishnagiri,<br>Tamilnadu,<br>India,<br>Pin-635207.</address></p>
+                                    <a href="https://www.google.com/maps/@12.9332891,80.1095643,14z">GET DIRECTIONS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+    <footer>
+        <div class="footertop">
+            <div class="categories">
+                <h5>CATEGORIES</h5>
+                <ul>
+                    <li><a href="./product.html">Dry Fruits</a></li>
+                    <li><a href="./product.html">Spices</a></li>
+                    <li><a href="./product.html">Grocery</a></li>
+                
+                </ul>
+            </div>
+            <div class="myaccount">
+                <h5>MY ACCOUNT</h5>
+                <ul>
+                    <li><a href="./account.html">Profile</a></li>
+                    <li><a href="./wishlist.html">Wish list</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./trackorder.html">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="aboutus">
+                <h5>ABOUT US</h5>
+                <ul>
+                    <li><a href="#">Quality</a></li>
+                    <li><a href="#">Courier Partner</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="logo_sec"> 
+                <a href="./index.html"><img src="./images/logo.webp" alt=""></a>
+                <div class="followus-sec">
+                    <div class="tit">
+                        <h6>Follow Us</h6>
+                    </div>
+                    <div class="followus-icon">
+                        <a href="#" id="google-icon" alt="Google" title="Google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        <a href="#" id="fb-icon" alt="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" id="insta-icon" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" id="twitter-icon" alt="Twitter" title="Twitter" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" id="youtube-icon" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright © 2023 Grocery Cart Private Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>

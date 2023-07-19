@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grocerycart</title>
+                                <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="./images/android-chrome-192x192.png">
+                                <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+                                <!-- Font Awsome  ICON-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <!-- Bootstrap --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+                                <!-- Css -->
+        <link rel="stylesheet" href="css/style.css">
+                                <!--Script -->
+        <script src="js/script.js"></script>
+        <script src="js/tempdb.js"></script>
+        <style>
+            .top-offer img{width: 100%; object-fit: contain;}
+            .update-sec{display: flex; }
+            .update-section{padding: 5px 30px; background-color: #555; color: #fff;}
+            /* .update-section{padding: 5px 30px; background-color: #ffb12b; color: #fff;} */
+            .update-section li{padding: 0px 10px;list-style: none;}
+            .update-sec li:hover{color: #ffb12b;}
+            .update-sec span:hover{color: #ffb12b;}
+            .update-section ul{margin: auto;}
+            .update-sec span{padding-left: 10px;}
+            .update-sec .left-update{width: 50%; justify-content: left;}
+            .update-sec .right-update{width: 50%; justify-content: right;}
+            .update-section .social-icon ul{border-right: 1px solid#fff; padding-right: 20px;}
+            .update-section .contact-num{align-items: center;padding: 0 20px;border-right: 1px solid#fff;}
+            .update-section .support-icon{align-items: center;padding: 0 20px;}
+
+
+            /* .navigation .nav-top{background-color: #fff !important;}
+            .navigation .nav-bot{background-color: #fff !important;}
+            .navbar{background-color: #fff;border: 0;}
+            .search button {background-color: #fff;color: #000;}
+            .search input{background-color: #fff;} */
+          
+        </style>
+    </head>
+        
+           
+    <body onload="checkSession()">
+        <!-- Navigation Section -->
+        <div class="navigation">
+            <!-- <div class="top-offer">
+                <img src="./images/top-offer-banner-free_shiping.webp" alt="">
+            </div> -->
+            <div class="update-section update-sec">
+                <div class="left-update update-sec">
+                    <div class="social-icon update-sec">
+                        <ul class="update-sec">
+                            <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-youtube-play" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+                    <div class="download-app update-sec">
+                        <ul class="update-sec">
+                            <li>Download App</li>
+                            <li><i class="fa fa-android" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-apple" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-windows" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right-update update-sec">
+                    <div class="contact-num update-sec">
+                        <i class="fa fa-phone" aria-hidden="true"></i> <span> +91 9524213166</span>
+                    </div>
+                    <div class="support-icon update-sec">
+                        <i class="fa fa-envelope" aria-hidden="true"></i> <span> support.gc@outlook.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-top">
+                <div class="row">
+                    <div class="col top-sec1">
+                        <a href="#"> <img src="./images/logo.webp"></a>
+                    </div>
+                    <div class="col top-sec2">
+                        <div class="search">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col top-sec3">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link " aria-current="page" href="./account.html"><i class="fa fa-user" aria-hidden="true" title="USER ACCOUNT"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-heart" aria-hidden="true" title="WISH LIST"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./cart.html"><i class="fa fa-cart-plus" aria-hidden="true" title="CART"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-truck" aria-hidden="true" title="TRACK ORDER"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" ><i onclick="removeUser()" class="fa fa-sign-out" aria-hidden="true" title="LOG OUT"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="nav-bot">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Grocerycart</a> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="./index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./product.html">PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./blog.html">BLOG</a>
+                                </li>
+                                <!-- Future Update -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    OFFERS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Track Order</a></li>
+                                    <li><a class="dropdown-item" href="#">Upcomming Product</a></li>
+                                    <li><a class="dropdown-item" href="#">Offers</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Banner Section | Carousel -->
+        <div class="banner-sec">
+            <div class="slide-sec">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                    <div class="carousel-item carousel-img active">
+                        <img src="./images/banner.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block  ">
+                        <h5>Dry Fruits</h5>
+                        <p>The Best Quality dryfruits with Upto 25% of Discount</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/banner-spice.webp" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block ">
+                        <h5>Spices</h5>
+                        <p>Introducing freshly made spice.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/Banner-Spice-2.webp" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block ">
+                        <h5>Masala</h5>
+                        <p>SA smell that is difficult to resist</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="banner-overlay">
+                <div class="offer">
+                    <h5>Offer Start from Limited Time</h5>
+                    <h2>Now Latest Offer</h2>
+                    <p>The Best Grocery Available for Grocerycart online Shop</p>
+                    <a href="./Product.html">SHOP NOW</a>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Home Page Content -->
+        <div class="category-contet">
+            <div >
+                <h2>Explore & Choose</h2>
+                <p>Dried fruits are fruits that are devoid of any original water. The water is extracted from the fruits through the natural process of sun drying or specialized dehydrators and dryers.
+                    The most common dried fruits include almond (badam), cashew (kaju), pistachio (pista), figs (anjeer), walnut (akhrot), raisins, dates, apricots, prunes or dried plums and peaches.</p>
+                <br>
+                <p>Grocerycart Spices, the most trusted and best spice store from the land of spices,Kerala & Tamilnadu. We offer a wide range of authentic, best quality spices like cardamom, black pepper, clove, cinnamon,
+                     poppy seeds, bay leaves, turmeric, ginger, star anise, nutmeg, among others.</p>
+            </div>
+            <!-- <div class="categories-list">
+                <ul>
+                    <li>Spices & Mix Powder</li>
+                    <li>Dry Fruits & Dry Seeds</li>
+                    <li>Grocery & Fast Moving Consumer Goods</li>
+                    <li class="cooking">Cooking ingredients</li>
+                </ul>
+            </div> -->
+
+        </div>
+        <div class="small-banner">
+            <div class="overlay">
+                <img src="./images/double-banner-2.webp" alt="Spices">
+                <div class="offer">
+                    <h2>Save 30% Offer<br>Spicy Food</h2>
+                    <a class="black-btn" href="./Product.html">SHOP NOW</a>
+                </div>
+            </div>
+
+            <div class="overlay">
+                <img src="./images/double-banner-1.webp" alt="spices">
+                <div class="offer">
+                    <h2>All Grocery Purchase<br>Now 50% Offer</h2>
+                    <a class="black-btn" href="./Product.html">SHOP NOW</a>
+                </div>
+            </div>
+        </div> 
+
+
+
+        <div class="product-list">
+            <h5>Popular Products</h5>
+            <p>You can add some sweetness to your day by enjoying dried fruits.
+                Popular dried fruits include raisins, dates, prunes (dried plums), figs, apricots and peaches.
+                Fruits such as dried mango, pineapple and berries are also available, but these tend to be dried with added sugar.</p>
+            <div class="dryfruits-list">
+                <img src="./images/spice-powder-1.webp">
+                <img src="./images/spice-powder-2.webp">
+                <img src="./images/spice-powder-3.webp">
+                <img src="./images/spice-powder-4.webp">
+                <img src="./images/spice-powder-5.webp">
+
+            </div>
+        </div>
+        <!-- <div class="product-list">
+            
+            <div class="dryfruits-list">
+                <img src="./images/dryfruits-pista.webp">
+                <img src="./images/dryfruits-grapes.webp">
+                <img src="./images/dryfruits-almonds.webp">
+                <img src="./images/dryfruits-pigs.webp">
+                <img src="./images/dryfruits-walnuts.webp">
+            </div>
+        </div> -->
+
+
+    <!--
+        <div class="sp-images">
+            <h2>Our Spices</h2>
+            <div class="sp-img">
+                <img src="images/sp-2.png">
+            </div>
+            <div class="sp-img">
+                <img src="images/sp-3.png">
+            </div>
+            <div class="sp-img">
+                <img src="images/sp-4.png">
+            </div>
+        </div>
+    -->
+
+    <div class="sp-images product">
+        <h5>Exclusive Products</h5>
+        <p>Our online website guarantees the finest and freshest quality dry fruits and mixed dry fruits. Along with the best quality, we also ensure optimum affordability, as our dry fruit products are available at the lowest prices. We also guarantee the fastest delivery service. And being one of the most trusted and reliable websites for dry fruits, we aim to continue to serve our customers with nothing less than the best.</p>
+        <h2>Trending Products</h2>
+        <div class="sp-img">
+            <img src="images/pro-1.png">
+            <span>New Product</span>
+        </div>
+        <div class="sp-img">
+            <img src="images/pro-2.webp">
+            <span>Special Product</span>
+        </div>
+        <div class="sp-img">
+            <img src="images/pro-3.png">
+            <span>Best seller</span>
+        </div>
+        <div class="border-img">
+            <img src="images/spice-img-1.png"> 
+            <img src="images/spice-img-2.png">
+            <img src="images/spice-img-3.png">
+            <img src="images/spice-img-4.png">
+            <img src="images/spice-img-5.png">       
+        </div>
+    </div>
+
+
+
+
+    <!--
+        <div class="spice-powder-row">
+        
+                <a href="#"><img src="./images/spice-powder-1.webp" alt="Spice powder"> </a>
+                <a href="#"><img src="./images/spice-powder-2.webp" alt="Spice powder"> </a>
+                <a href="#"><img src="./images/spice-powder-3.webp" alt="Spice powder"> </a>
+                <a href="#"><img src="./images/spice-powder-4.webp" alt="Spice powder"> </a>
+                <a href="#"><img src="./images/spice-powder-5.webp" alt="Spice powder"> </a>
+        </div>-->
+
+
+
+
+
+
+
+    <!--    <div class="banner-spice">
+            <div class="column-1">
+                <div class="spicyfoods">
+                <a href="#"><img src="./images/spice-img-spicyfoods-1.webp" alt="spicyfoods" ></a>
+                </div>
+
+                <div class="mixmasala">
+                    <a href="#"><img src="./images/spice-img-mixmasala-2.webp" alt="mix-masala" ></a>
+                </div>
+            </div>
+            <div class="column-2">
+                <div class="healthy">
+                <a href="#"><img src="./images/spice-img-healthy-3.webp" alt="healthy" > </a>
+                </div>
+                <div class="natural">
+                <a href="#"><img src="./images/spice-img-natural-4.webp"alt="natural" ></a>
+                </div>
+            </div>
+        </div>   -->
+        <div class="shop_us">
+            <h3>Why Shop With Us?</h3>
+            <p>We sell authentic and high-quality spices at an affordable rate. Grocerycart.com is the best and top online seller of spices and herbs based on ratings and reviews by customers of Groceryonline.com
+            Option to choose Payment via Internet banking, debit card, credit card, Paytm,Sodexo card, Paypal for International customers. Wherever you are, we offer timely delivery and International delivery.</p>
+            <p>Our customer support is 24/7 – users rave about how we don’t rest until every issue is solved to their satisfaction
+            Our team, who are passionate about spreading the pure spice essence, handpick the best of the best only for you. Grocerycart online is India’s first and best online spice store with a wide range of products from spices, masala powders, special snacks.</p>
+        </div>
+
+        <div class="container-service">
+            <div class="service">
+                <div class="media">
+                    <div class="img">
+                        <img src="./images/service-shipping.png" alt="free shipping">
+                    </div>
+                    <div class="box">
+                        <h4>Free Shipping</h4>
+                        <span>Free Shipping World Wide</span>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="img">
+                        <img src="./images/service-customercare.webp" alt="24*7 Service">
+                    </div>
+                    <div class="box">
+                        <h4>24*7 Service"</h4>
+                        <span>24 hours helpdesk"</span>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="img">
+                        <img src="./images/service-offer.png" alt="Festival Offer">
+                    </div>
+                    <div class="box">
+                        <h4>Festival Offer</h4>
+                        <span>upto 30% offer on Festival Seasons</span>
+                    </div>
+                </div>
+                <div class="media online">
+                    <div class="img">
+                        <img src="./images/service-payment.webp" alt="Online Payment">
+                    </div>
+                    <div class="box" >
+                        <h4>Online Payment</h4>
+                        <span> Accepted all Online payment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="footertop">
+            <div class="categories">
+                <h5>CATEGORIES</h5>
+                <ul>
+                    <li><a href="./product.html">Dry Fruits</a></li>
+                    <li><a href="./product.html">Spices</a></li>
+                    <li><a href="./product.html">Grocery</a></li>
+                
+                </ul>
+            </div>
+            <div class="myaccount">
+                <h5>MY ACCOUNT</h5>
+                <ul>
+                    <li><a href="./account.html">Profile</a></li>
+                    <li><a href="./wishlist.html">Wish list</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./trackorder.html">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="aboutus">
+                <h5>ABOUT US</h5>
+                <ul>
+                    <li><a href="#">Quality</a></li>
+                    <li><a href="#">Courier Partner</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="logo_sec"> 
+                <a href="./index.html"><img src="./images/logo.webp" alt=""></a>
+                <div class="followus-sec">
+                    <div class="tit">
+                        <h6>Follow Us</h6>
+                    </div>
+                    <div class="followus-icon">
+                        <a href="#" id="google-icon" alt="Google" title="Google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        <a href="#" id="fb-icon" alt="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" id="insta-icon" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" id="twitter-icon" alt="Twitter" title="Twitter" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" id="youtube-icon" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright © 2023 Grocery Cart Private Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>

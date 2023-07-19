@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Us</title>
+                                <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="./images/android-chrome-192x192.png">
+                                <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+                                <!-- Font Awsome  ICON-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <!-- Bootstrap --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+                                <!-- Css -->
+        <link rel="stylesheet" href="css/style.css">
+                                <!--Script -->
+        <script src="js/script.js"></script>
+    </head>
+    <body onload="checkSession()">
+        <!-- Navigation Section -->
+        <div class="navigation">
+            <div class="nav-top">
+                <div class="row">
+                    <div class="col top-sec1">
+                        <a href="#"> <img src="./images/logo.webp"></a>
+                    </div>
+                    <div class="col top-sec2">
+                        <div class="search">
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col top-sec3">
+                        <nav class="navbar navbar-expand-lg navbar-light ">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link " aria-current="page" href="./account.html"><i class="fa fa-user" aria-hidden="true" title="USER ACCOUNT"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-heart" aria-hidden="true" title="WISH LIST"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./cart.html"><i class="fa fa-cart-plus" aria-hidden="true" title="CART"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="..."><i class="fa fa-truck" aria-hidden="true" title="TRACK ORDER"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" ><i onclick="removeUser()" class="fa fa-sign-out" aria-hidden="true" title="LOG OUT"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="nav-bot">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container-fluid">
+                        <!-- <a class="navbar-brand" href="#">Grocerycart</a> -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="./index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about.html">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./product.html">PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./contact.html">CONTACT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./blog.html">BLOG</a>
+                                </li>
+                                <!-- Future Update -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    OFFERS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Track Order</a></li>
+                                    <li><a class="dropdown-item" href="#">Upcomming Product</a></li>
+                                    <li><a class="dropdown-item" href="#">Offers</a></li>
+                                    </ul>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+                    <!--ABOUT US PAGE START -->
+
+      
+        <div class="aboutus-banner">
+            <img src="./images/about-banner.jpg">
+            <h1>ABOUT US</h1>
+        </div>
+
+        <div class="rich-masala">
+            <div class="cont">
+                <div class="box-cont">
+                    <h4>The Richest Masala In The World</h4>
+                    <p>Indian spices include a variety of spices grown across the Indian subcontinent (a sub-region of South Asia). With different climates in different parts of the country, India produces a variety of spices, many of which are native to the subcontinent. 
+                        Others were imported from similar climates and have since been cultivated locally for centuries. Pepper, turmeric, cardamom, and cumin are some examples of Indian spices.</p>
+                    <i> Spices are used in different forms: whole, chopped, ground, roasted, sautéed, fried, and as a topping. They blend food to extract the nutrients and bind them in a palatable form. 
+                        Some spices are added at the end as a flavouring — those are typically heated in a pan with ghee (Indian clarified butter) or cooking oil before being added to a dish. Lighter spices are added last, and spices with strong flavour should be added first
+                    </i>
+                </div>
+                <div class="img">
+                    <img src="./images/aboutus-banner-spice.webp" alt="Spice" title="masala Spice">
+                </div>
+            </div>
+        </div>
+
+
+        <section class="unique-flav">
+            <div class="title">
+                <h2>Unique flavors spices</h2>
+                <p>spices and dry fruits.</p>
+            </div>
+            <div class="cont">
+                <div class="row">
+                    <div class="col">
+                        <div class="sub-cont">
+                            <div class="icon">
+                                <img src="./images/coffee.png">
+                            </div>
+                            <div class="box-cont">
+                                <h4>Flavors</h4>
+                                <p>The category of premium spices and dry fruits of Grocerycart provides higher quality and authentic spices and dry fruits.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="sub-cont">
+                            <div class="icon">
+                                <img src="./images/cultivation.png">
+                            </div>
+                            <div class="box-cont">
+                                <h4>Cultivation</h4>
+                                <p>Most of the products in this category are handpicked and filtered specifically to maintain awesome quality and freshness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <div class="sub-cont">
+                            <div class="icon">
+                                <img src="./images/data-transfer (1).png">
+                            </div>
+                            <div class="box-cont">
+                                <h4>Export</h4>
+                                <p>Starting our journey from 2015 and our business venture is focused on providing aromatic quality spices to customers.</p>
+            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="sub-cont">
+                            <div class="icon">
+                                <img src="./images/online-test.png">
+                            </div>
+                            <div class="box-cont">
+                                <h4>Testing</h4>
+                                <p>Our team, who are passionate about spreading the pure spice essence, handpick the best of the best only for you.</p>
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="blend">
+            <div class="title">
+                <h2>A unique blended taste</h2>
+                <p>We believe that cooking is an art, and with our premium quality spices, you can create masterpieces that are sure to impress your guests.</p>
+            </div>
+            <div class="cont">
+                <div class="img">
+                    <img src="./images/about-blend.webp">
+                </div>
+                
+                <div class="box-cont">
+                    <h4>The finest spice</h4>
+                    <p>Grocerycart.com is India’s first online spices store. With over 40 major types of spices that are used to cook, you will find everything you are looking for as a tastemaker. Choose from a wide range of options in spices, exclusively handpicked to help you find the best quality available at the lowest prices.</p>
+                    <p>It is from the land of spices like Udumbumchola Taluk and Peermadu Taluk of the Idukki district of Kerala. Kumily, Vandanmedu, Thekkady, Munnar, and Kattappana are the major places of spice production in Kerala.</p>
+                </div>
+            </div>
+            <div class="cont">
+                <div class="box-cont box-cont-2">
+                    <h4>The premium flavor</h4>
+                    <p>Spices are used in the production of certain indigenous medicines, preservatives, perfumes and most importantly in everyday cooking. Spices don’t simply add more pungent flavor and fragrance to our daily nourishment – they also help digestion, protect from bacteria and prevent many diseases.</p>
+                    <p>Spices from Kerala are high quality and original. Because of its originality it have good smell and looks very attractive. Kerala is land of spices, because of that Spices of Kerala have high demand. </p>
+                </div>
+                <div class="img">
+                    <img src="./images/about-blend-2.webp">
+                </div>
+            </div>
+        </div>
+        <div class="client">
+            <div class="title">
+                <h2>Our Client Words</h2>
+                <p>Pellentesque at justo porttitor quis</p>
+            </div>
+            <div class="cont">
+                <div class="testi">
+                    <p>Naming a fruit-based business can be difficult without a bit of creativity. Combining two words that relate to the business to produce a catchy and unique name is one way to do it.</p>
+                    <img src="./images/about-testi-1.avif">
+                    <cite>Lisa - Designer</cite>
+                </div>
+                <div class="testi">
+                    <p>A catchy name will help customers remember your products stand in a competitive trade. Think about the different aspects of the fruit and how you can come up with creative wordplay off of those aspects.</p>
+                    <img src="./images/about-testi-2.avif">
+                    <cite>Rose - Professor</cite>
+                </div>
+                <div class="testi">
+                    <p>The key to coming up with a fruit-related business name is to brainstorm. Think about what fresh vegetables are grown in your area, and what fruits could be potentially grown in your area due to the climate. </p>
+                    <img src="./images/about-testi-3.avif">
+                    <cite>Krish Max - Developer</cite>
+                </div>
+            </div>
+        </div>
+        <div class="team">
+            <div class="title">
+                <h2>Our Team</h2>
+                <p>Anything can happen with a good team.</p>
+            </div>
+            <div class="team-cont">
+                <div class="row">
+                    <div class="col">
+                        <div class="inner-cont">
+                            <img src="./images/aboutus-team-1.webp">
+                            <h5>Rithvika</h5>
+                            <p>Proprietor</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inner-cont">
+                            <img src="./images/aboutus-team-2.webp">
+                            <h5>Krish</h5>
+                            <p>Customer support</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inner-cont">
+                            <img src="./images/aboutus-team-3.webp">
+                            <h5>Rithanya</h5>
+                            <p>Product Manger</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="inner-cont">
+                            <img src="./images/aboutus-team-4.webp">
+                        <h5>Dhilshon</h5>
+                        <p>Delivery Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="footertop">
+            <div class="categories">
+                <h5>CATEGORIES</h5>
+                <ul>
+                    <li><a href="./product.html">Dry Fruits</a></li>
+                    <li><a href="./product.html">Spices</a></li>
+                    <li><a href="./product.html">Grocery</a></li>
+                
+                </ul>
+            </div>
+            <div class="myaccount">
+                <h5>MY ACCOUNT</h5>
+                <ul>
+                    <li><a href="./account.html">Profile</a></li>
+                    <li><a href="./wishlist.html">Wish list</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./trackorder.html">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="aboutus">
+                <h5>ABOUT US</h5>
+                <ul>
+                    <li><a href="#">Quality</a></li>
+                    <li><a href="#">Courier Partner</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="logo_sec"> 
+                <a href="./index.html"><img src="./images/logo.webp" alt=""></a>
+                <div class="followus-sec">
+                    <div class="tit">
+                        <h6>Follow Us</h6>
+                    </div>
+                    <div class="followus-icon">
+                        <a href="#" id="google-icon" alt="Google" title="Google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        <a href="#" id="fb-icon" alt="Facebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" id="insta-icon" alt="Instagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" id="twitter-icon" alt="Twitter" title="Twitter" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" id="youtube-icon" alt="Youtube" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright © 2023 Grocery Cart Private Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+</html>

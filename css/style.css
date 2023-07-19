@@ -1,0 +1,489 @@
+            *{margin: 0;padding: 0;}
+            body{
+                font-family: 'Montserrat', sans-serif;;
+            }
+
+            /*=====================================================================================*/
+            /* Navigation Section */
+            .navigation{position: sticky;top: 0px;z-index: 999;}
+            /*Top Section*/
+            .nav-top{padding: 5px;background-color: #ddd;}
+            .top-sec1 img{margin-left: 40px;}
+            .top-sec2 {margin-top: 10px;text-align: center;}
+            .top-sec2 button:hover{background-color:#ffb12b;color: #fff;}
+            .top-sec2 input{padding: 10px;font-size: 17px;border: 1px solid grey;float: left;width: 80%;background: #f1f1f1;}
+            .top-sec2 button{ float: left;width: 20%;padding: 10px;background: #bbb;color: white;font-size: 17px;border: 1px solid grey;}
+            .nav-top .navbar-light .navbar-nav .nav-link{color: #000;}
+            .nav-top .navbar-light .navbar-nav .nav-link:hover{color:#ffb12b ;}
+            .top-sec3 {display:flex;justify-content:end;}
+            .top-sec3 li{padding-right: 10px;font-size: 25px;color: #000!important;}
+        
+            /*Bottom Section*/
+            .navbar-light{padding: 0;border-bottom: 1px solid #ddd; background-color: #ddd;}
+            .nav-bot .navbar-light .navbar-nav{margin: auto; }
+            .nav-bot .navbar-light .navbar-nav .nav-link{color: #000;font-weight: bold;font-size: 16px;margin-right:20px;margin-left: 20px;}
+            .nav-bot .navbar-light .navbar-nav .nav-link:hover{color:  #ffb12b;}
+            /* --------------------------------------------------------------------------------- */
+
+
+            /* Corousel | Sliding Section */
+            .banner-sec .carousel-inner .carousel-item img{width: 100%;object-fit:cover;height: 550px;}
+    
+            /*Over Lap Content*/
+            .banner{position: relative;}
+            .overlay .banner-overlay .offer{ padding: 20px;position: absolute;top: 30%;left: 5%;z-index: 2;background: rgb(0, 0, 0, 0.4);width: 40%;height: 35%;border-left: 3px solid #fff;color: #fff;border-radius: 5px;text-align: center;}
+            .banner-overlay .offer h2{font-size: 70px;}
+            .banner-overlay .offer h5{font-size: 20px;}
+            .banner-overlay .offer p{font-size: 15px;}
+            .offer a{text-decoration: none; font-size: 14px; border:1px solid#ccc ;padding: 8px 20px; color: #fff;}
+            .banner-overlay:hover .offer a{ color:#fff; box-shadow: 1px 1px #fff;}
+
+            /*-------------------------------------------------------------------------- */
+                         /* index Page Style */  /* Home Page Design */
+
+                         .offer h2{font-family: 'Dancing Script', cursive;}
+
+
+                         .category-contet h2{
+                             color:#ffb12b;
+                             text-align: center;
+                             font-size: 30px;
+                             font-weight: 600;
+                             padding: 10px 0 0 0 ;}
+                         
+                        .category-contet p{font-size: 20px;
+                            padding: 20px 50px;
+                        text-align: start;}
+                 
+                         .product-list h5{color:#ffb12b;
+                             text-align: center;
+                             font-size: 30px;
+                             font-weight: 600;}
+                         .product-list p{font-size: 20px;
+                             padding: 20px 50px;
+                         text-align: start;}
+                         
+                         .categories-list li{
+                                         width:25%;
+                                         text-align: center;
+                                         font-family: Montserrat;
+                                         font-size: 18px;
+                                         text-transform: uppercase;
+                                         letter-spacing: .4em;
+                                         list-style: none;           
+                                         padding: 40px;
+                                         border-right: 2px solid#ddd;
+                
+                                         /* Set up the hover */
+                                         /* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+                                         background-image: linear-gradient(rgb(98, 98, 98), rgb(98, 98, 98)), linear-gradient(silver, silver);
+                                         background-size: 0 100%, auto;
+                                         background-repeat: no-repeat;
+                                         background-position: center center;
+                                         transition: all .5s ease-out;
+                                         }
+                         
+                         .categories-list li:hover{
+                                         cursor:pointer;
+                                         color:#fff;
+                                         background-size: 100% 100%, auto;}
+                         
+                         
+             
+                         .categories-list ul{display: flex;
+                             justify-content: center;
+                         padding: 0px,20px!important;
+                         padding-left: 0;}
+             
+             
+                         li.cooking {border: 0;}
+             
+                          /* Double Image Banner section */
+                         .small-banner {display: flex;width: 100%; margin: 20px 0;}
+                         .small-banner .overlay { position: relative;width: 50%;}
+                         .small-banner .overlay img{width:100% ;height:400px;object-fit: cover;padding:20px ;}
+                         .small-banner .overlay .offer{position: absolute;top:40%; left:10%;}
+                         .small-banner .overlay .offer h2{font-size: 50px;}
+                         .offer .black-btn{color:#fff; background: rgb(0, 0, 0, 0.4);}
+                         .overlay .offer a:hover{ color:#fff; box-shadow: 1px 1px #fff;background-color: #ffb12b; border: 0;}
+             
+                             /* Dry Fruits list */
+             
+                         .dryfruits-list{display:flex;
+                             justify-content: center;margin: 0 5px;}
+                         .dryfruits-list img:hover{box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;}
+             
+                         .dryfruits-list img{width: 20%; padding: 3px; }
+/*------------------------------------------------------------------------------------------------------ */
+             /*Service container */
+             .container-service{ 
+                padding: 30px 10px 30px 10px;}
+            .service{
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-top: 1px solid#999;
+                border-bottom: 1px solid#999;}
+
+            .service .media{display: flex;
+                justify-content: center;
+                position:relative;
+                width: 25%;}
+            
+            .service .media .img{padding: 15px;}
+            .service .media .box{padding: 20px 10px;}
+            .service .media:hover .box h4{color: #ffb12b;
+            cursor: pointer;}
+            
+            .service .media::before{
+                position: absolute;
+                content:"";
+                width:1px;
+                height:50px ;
+                background-color: #999;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;}
+
+            .service .media.online::before{background-color: transparent;}
+
+/* ----------------------------------------------------------------------------------- */
+        /*Footer Style*/
+
+            .footertop{
+                background-color: #ddd;
+                display: flex;
+                justify-content: space-around;
+                padding: 25px 0;}
+
+            .footertop h5{
+                margin-bottom: 30px;
+                position: relative;}
+
+            .footertop h5:before {
+                content: "";
+                position: absolute;
+                width: 75px;
+                height: 3px;
+                background: #000;
+                top: 30px;}
+            .footertop a{text-decoration: none;color: #000;}
+            .footertop li{
+                list-style: none;
+                margin-bottom: 10px;}
+                
+            .footertop li:hover a {
+                    color: #ffb12b;
+                cursor: pointer;}
+
+            .footerbottom{background-color: #eee;}
+            .footerbottom p{background-color: #333; padding: 10px; color: #fff;}
+            .logo_sec img{margin:20px}
+ /* -------------------------------------------------------------------------------------------*/
+            /*Spices Images Style*/
+
+            .sp-images {
+                margin: 40px 30px;
+                text-align: center;}
+            
+            .sp-images h2{   
+                color: #ffb12b;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 600;
+                margin-bottom: 20px;}
+
+            .sp-img{
+                display: inline-block;
+                margin:10px 10px;}
+
+            .sp-images h5{ color: #ffb12b;
+                text-align: center;
+                margin-bottom: 10px;}
+            .sp-images p{font-size: 20px;
+                padding: 20px 50px;
+            text-align: start;
+            }
+            .shop_us h3{color: #ffb12b;
+                text-align: center;
+                margin-bottom: 10px;}
+            .shop_us{padding: 20px 50px;}
+            .shop_us p{font-size: 20px;
+                text-align: start;}
+            .sp-img span{
+                display: block;
+                margin-top: 10px;}d
+
+            .border-img{
+                margin: 40px 0;}
+
+            .border-img img{
+                width: 250px;}
+
+            
+/* ================================================================================================== */
+            /* Card -Product Display */
+            .product-nav{text-align: center;}
+            .card-body a:hover{background-color: #ffb12b;}
+            .filter-block{    position: sticky;top: 130px;
+                border:2px solid#ddd;padding-left:10px;}
+            .filter-block label {border-left: 2px solid#000;
+                background-color: #ffb12b;
+                margin: 15px 0; 
+                padding: 1px 5px;
+                font-weight: 400;
+            }
+            .card .card-body select {
+                background: #6c757d;
+                color: #fff;
+                font-weight: 700;
+                word-wrap: normal;}
+            .card .card-body a:hover select{background-color: #ffb12b;border:0;} 
+            .button-group{text-align: center;}   
+    /* ----------------------------------------------------------------------------- */
+            /*Product Display Section Bootstrap*/ 
+
+            .row{display: flex;
+                margin-top: 3px;}
+
+            .card{border:2px solid #ddd !important;}
+            .card button:hover{    background-color: #ffb12b;}
+
+            .card:hover{border:3px solid#ffb12b !important; }
+
+            .prod_list .row{justify-content: center;
+                    margin-bottom: 20px;}
+            .pro-display .col{display: contents;}
+            .prod-sec {margin-top: 20px !important;}
+                /*Spice Banner*/
+
+            .spice-contain .spice-img{border:2px solid #000;}
+
+            .spice-powder-row img {
+            width: 250px;
+            }
+
+            .spice-powder-row{text-align: center;
+            margin-bottom: 30px;}
+            
+            .spice-powder-row a{text-decoration: none;}
+        
+        
+                /*banner Spice design*/
+
+            .banner-spice{
+                display: flex;
+                justify-content: center;
+                margin:auto; } 
+            .banner-spice .column-1{max-width: 50%;}    
+            .banner-spice .column-2{max-width: 50%;}   
+
+
+        /* -------------------------------------------------------------------------------- */
+        /* Product Loading Description */
+            .prodDesc{margin-top: 30px;}
+            .prod-img{position: sticky;top: 150px;bottom: 0;align-self: flex-start;}
+            .prodDesc .carousel-sec{border:1px solid #ffb12b}
+            .prodDesc .buynow-sec{text-align: center; margin: 0; padding: 30px;}
+            .prodDesc .buynow-sec button:hover{box-shadow: 0 4px 6px 0 rgba(0,0,0,.12);}
+            .prodDesc .buynow-sec button{padding: 18px 8px;background-color: #ffb12b;border-radius: 2px;box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);width: 45%;border: none;color: #fff;font-weight: 600;}
+            .prodDesc .buynow-sec button.button-buynow{background-color: #fb641b;margin-left: 35px;}
+           
+            .description .offerzone {color: #f00;}
+            .description .prod-head{font-weight: 500;}
+            .description .rating{display: flex;}
+            .description .rating p{color: #fff;background-color: #198754;padding: 0px 5px;border-radius: 4px;}
+            .description .rating span{padding-left: 10px;}
+            .description .price del{color: #bbb;}
+            .description .price span{color: #198754;}
+            .description .avail-off i{color:#198754;}
+            
+            .col-2{color: #777;}
+            .description .delivery input{border: 0;border-bottom: 1px solid #ffb12b;text-align: center;}
+            .description .delivery a{text-decoration: none;color: #198754;}
+            .description .delivery p{padding-top: 5px;}
+            .description .highlights .col{margin-left: -20px;}
+            
+
+
+
+/* ====================================================================================================== */
+            /* About Us Page Style */
+            /* ABOUT US STYLE START */
+
+            body{ font-family: 'Montserrat', sans-serif;}
+          
+                              /* About Us Banner */
+            .aboutus-banner {position: relative; display: flex;
+                align-items: center;
+                justify-content: center;}
+            .aboutus-banner h1{position: absolute;  color:#fff; font-weight: 700;}
+            .aboutus-banner img{object-fit: cover; width:100%;height: 400px;}
+        
+                     /*About Us-Rich Masala*/
+            .title{text-align: center;}
+            .title h2{color: #ffb12b;font-weight: 700;font-size: 30px;}
+                h4{font-weight: 700;font-size: 20px;}
+            .rich-masala .cont{display: flex; margin: 0px 200px; padding: 30px 0px 40px 0px;}
+            .rich-masala .cont .box-cont{width: 60%;padding-right: 50px;}
+            .rich-masala .cont .img{width: 40%;padding:15px 0px;}
+            .rich-masala .cont .img img{width:100%;border-radius: 10px;}
+            .rich-masala .cont .box-cont q{border-left: #000 solid 2px; padding-left: 20px;}
+    
+                /*About Us-Unique-Flav*/
+            .unique-flav{    background-color: #dddddd3d;
+                padding: 35px 0 0;
+            }
+            .title{text-align: center; position: relative;}
+            .title::before{
+                content: "";
+                position: absolute;
+                width: 70px;
+                height: 20px;
+                background-image: url("../images/about-star.webp");
+                top: 80px;
+                left: 720px;
+                z-index: 1;
+                background-size: auto;
+                background-repeat: no-repeat;}
+
+            /*.unique-flav .cont{margin: 20px 100px;} */
+            .unique-flav .cont .sub-cont{ display: flex;}
+            .unique-flav .cont .sub-cont .icon{padding: 5px;margin: 0px 20px 55px 20px;}
+            .unique-flav .cont .sub-cont .icon img{width: 50px; height: 50px;}
+            .unique-flav .cont .sub-cont:hover .icon{border:1px solid #ffb12b; padding: 5px;}
+            .box-cont h4{ color:#ffb12b}
+    
+            .cont{display: flex; margin: 0px 200px; padding: 30px 0px 40px 0px;}
+            .blend .img{width: 40%;padding:15px 0px;}
+            .blend .box-cont{width:60% ; margin-left: 50px;}
+            .blend .img img{width: 100%; border-radius:10px ;}
+            .blend .cont .box-cont-2{margin-right: 50px;}
+    
+            /*About-Us Our Client*/
+            .client{    background-color: #dddddd3d;
+                padding: 35px 0 0;}
+            .testi p{position: relative; padding-right: 40px;}
+            .testi img{width:75px;height: 75px; border-radius: 50%;}
+           
+            .testi p::after{position: absolute;
+            content: "";
+            font-size: 20px;font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
+        }
+        /* About-Us Our Team */
+            .team{margin-top: 40px;}
+            .team-cont{ margin: 80px 80px 40px; text-align: center;}
+            .team-cont img{width: 60%;}
+            .team-cont h5{color:#ffb12b;margin-top: 5px;}
+            .inner-cont p{text-align: center;}
+
+
+
+/* ============================================================================================================ */
+        /* Contact Page */
+        /* Contact Us-Bottom Banner Section */
+            .contact .banner-section{display: flex;}
+            .banner-section .banner{background-image: url("../images/contact-bg-img.png");background-size: 80px; width:100% ; height: 700px;background-repeat: repeat;}
+            .banner{display: flex;align-items: center;}
+            .banner .container{display: flex;justify-content: center;align-items: center;}
+            .banner .bot-sec{width: 900px; height: 500px;background-color:  #ffc107; color: #000; position: relative;display:grid; box-shadow: #fff 1px 1px 2px;}
+            
+            .bot-sec .con-tit{width: 70%;display: flex;align-items: center;justify-content: center; }
+            .bot-sec .con-tit h2{font-weight: 800;}
+            .banner .bot-sec .contact-icon{    width: 70%;align-items: center;display: flex;justify-content: center;}
+            .banner .bot-sec .contact-icon .icon-block{margin: 0 10px;}
+            .banner .bot-sec .contact-icon img{height: 50px;width: 50px;object-fit: contain; }
+            .banner .bot-sec .explore-but{display: flex;align-items: center;justify-content: center;width: 70%;top: 0;}
+            .banner .bot-sec .explore-but a{text-align: center;padding: 7px 15px; text-decoration: none; color: #fff; font-size: 20px ;background-color: #f0483e;}
+           
+
+                                                    /* Contact Us-Top Banner Section */
+            .banner .top-sec{width: 350px; height: 400px; background-color:#fff;position: absolute;right: 230px;box-shadow: 0 0 16px 3px rgba(136, 136, 136, 0.121);display: flex;align-items: center;justify-content: center;}
+            .top-sec img{object-fit: contain; width: 100%; height: auto;}
+            .top-sec .content{margin: 30px 10px;}
+            .top-sec .content .logo-grocery{text-align: center;margin-bottom: 40px;}
+            .followus-sec{text-align: center;}
+            .followus-sec .followus-icon a{padding:5px;font-size: 25px; margin: 0 5px;}            
+            #google-icon{color:#cb2027;}
+            #youtube-icon{color: #ff3400;}
+            #fb-icon{color: #3b5999;}
+            #insta-icon{color:#cc2366;}
+            #twitter-icon{color:#00aced;}
+
+                                                 /* Bottom-Section */
+            .contact .bottom-section{background-image: url("../images/contact-bg-img-2.png");background-size: 80px; width: 100%;height: 700px;background-repeat: repeat;background-color: rgb(247, 247, 247); width: 100%;align-items: center;display: flex;}
+            
+           .bottom-section .contact-info .small-sec{display:flex;border-bottom:1px solid #ddd; align-items: center;}
+            .bottom-section .contact-info .small-sec img{ align-items: center;display: flex; padding: 10px;margin-right: 10px; transition: 0.1s}
+            .bottom-section .contact-info .small-sec:hover img{border: 3px solid #ffc107}
+            .bottom-section .direction a{text-align: center;padding: 7px 15px; text-decoration: none; color: #fff; font-size: 20px ;background-color:  #ffc107; }
+            .bottom-section .direction:hover a{box-shadow: 0 0 16px 3px rgba(136, 136, 136, 0.121)}
+            .bottom-section .contact-info .small-sec .content h5{margin: 10px 0 0 0 ;}
+            .bottom-section .contact-info .small-sec .content p{margin-bottom: 0;}
+            .bottom-section .getintouch .inner-cont{display: grid;}
+            .bottom-section .getintouch .inner-cont button{width: 100px;text-align: center;}
+            .bottom-section .getintouch .inner-cont:hover button{border: 3px solid #ffc107;}
+        
+
+
+
+
+/* ============================================================================================================ */
+        /* Blog page */
+            .blog{display: flex;margin: 50px 0;}
+            .blog h5{color:#ffb12b;}
+            .blog .spice-img{width: 100%;object-fit: contain;margin-right: 25px;}
+            .blog .content{display: grid; margin: 30px 0;}
+            .blog .content .sml-sec{display: flex;align-items: center;}
+            .blog .content .post{display: flex;align-items: center;}
+            .blog .content .sml-sec .li-outer{display: flex;align-items: center;padding: 0;}            
+            .blog .content .sml-sec .list{list-style:none;padding: 0 5px;border-right: 1px solid#666 ;}
+            .blog .content .sml-sec .list-2{border: 0;}
+        
+/* ==================================================================================================== */
+        /* Account Section */
+        .acc_selection{display: flex;display: flex;margin: 30px 0;}
+            .acc_selection .user_select{border: 1px solid#ffb12c;border-top: 2px solid #ffb12c;width: 50%;margin:30px 15px ;padding: 30px;}
+            .acc_selection .user_select .list_feature li{list-style: none;}
+            .acc_selection .user_select .list_feature ul{padding: 0;}
+            /*.acc_selection .user_select .list_feature li::before{position: absolute;content:""; background-image: url("<i class="fa fa-download" aria-hidden="true"></i>");left: 0; } */
+            .acc_selection .user_select .redirect button{background-color: #ffb12c;color: #fff;border: 0;padding: 3px 8px;margin-right: 20px;}
+            .acc_selection .user_select .redirect a{text-decoration: none;color: #000;}
+            .acc_selection .user_select .redirect button:hover{color: #000;}
+            .form_group .form_ip .input_sec{display:grid; margin: 20px 0; }
+            .form_group .form_ip .input_sec .ip input{width: 100%;}
+
+            /* -------------------------------------------------------------- */
+            /* Resiter Section */
+            .outer_border{border:1px solid #ffb12b;border-top: 2px solid #ffb12b; padding: 30px;margin: 50px 170px;}
+            .outer_border .top_close .create_acc p{text-align: left;}
+            .outer_border .top_close .close_reg {text-align: right;}
+            .outer_border .top_close .close_reg:hover a{color: #ffb12b;transition: 0.2s;}
+            .outer_border .top_close .close_reg a{text-decoration: none;color: #000; font-size: 13px;}
+            .bottom_register button{color: #fff;;background-color: #ffb12b;padding: 3px 10px;border: 0;}
+            .bottom_register .reset_reg{background-color: #fff;color: #000;border: 0;}
+            .bottom_register .reset_reg:hover{color: #ffb12b; transition: 0.2s;}
+            .bottom_register button:hover{color: #000;}
+            /* --------------------------------------------------------------- */
+            /* Reset Account Section */
+            .outer_border{border:1px solid #ffb12b;border-top: 2px solid #ffb12b; padding: 30px;margin: 50px 170px;}
+            .form_cont p{text-align: end;}
+            .outer_border .top_close .create_acc p{text-align: left;}
+            .outer_border .top_close .close_reg {text-align: right;}
+            .outer_border .top_close .close_reg:hover a{color: #ffb12b;transition: 0.2s;}
+            .outer_border .top_close .close_reg a{text-decoration: none;color: #000; font-size: 13px;}
+            .bottom_register button{color: #fff;;background-color: #ffb12b;padding: 3px 10px;border: 0;}
+            .bottom_register .reset_reg{background-color: #fff;color: #000;border: 0;}
+            .bottom_register .reset_reg:hover{color: #ffb12b; transition: 0.2s;}
+            .bottom_register button:hover{color: #000;}
+
+            /* ====================================================================================== */
+     
+            
+
+
+                  
+               
+             
